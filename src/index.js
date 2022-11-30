@@ -9,8 +9,8 @@ const searchParams = new URLSearchParams({
 
 console.log(searchParams.toString());
 
-function fetchCountries() {
-  return fetch(`https://restcountries.com/#api-endpoints-v3-name`)
+function fetchCountries(name) {
+  return fetch(`https://restcountries.com/v3.1/all`)
     .then(res => {
       if (!res.ok) {
         throw new Error(res.status);
