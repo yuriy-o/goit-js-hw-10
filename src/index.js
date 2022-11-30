@@ -9,14 +9,16 @@ const searchParams = new URLSearchParams({
 
 console.log(searchParams.toString());
 
-fetch(`https://jsonplaceholder.typicode.com/users?${searchParams}`)
-  .then(res => {
-    if (!res.ok) {
-      throw new Error(res.status);
-    }
-    return res.json();
-  })
-  .then(data => {
-    console.log(data);
-  })
-  .catch(console.log);
+function fetchCountries(name) {
+  return fetch(`https://restcountries.com/#api-endpoints-v3-name`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error(res.status);
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+    })
+    .catch(console.log);
+}
