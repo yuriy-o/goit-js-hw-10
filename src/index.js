@@ -25,28 +25,8 @@ function fetchCountries(name) {
 
 fetchCountries();
 
+const input = document.querySelector('');
 
-{
-	"Print to console": {
-		"scope": "javascript,typescript",
-		"prefix": "log",
-		"body": [
-			"console.log('$1');",
-			"$2"
-		],
-		"description": "Log output to console"
-	}
-      
-	"Add funcion": {
-	  "scope": "javascript,typescript",
-	  "prefix": "f",
-	  "body": [
-		  "function $1 ($2) {",
-		  "$3",
-		  "};",
-		  "$0"
-	  ],
-	  "description": "Вставляє function () { };
-	}
+input.addEventListener('fullscreenchange');
 
-}
+tabs.addEventListener('click');
