@@ -24,9 +24,3 @@ function fetchCountries(name) {
 }
 
 fetchCountries();
-
-const input = document.querySelector('');
-
-input.addEventListener('fullscreenchange');
-
-tabs.addEventListener('click');
