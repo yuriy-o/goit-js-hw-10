@@ -48,13 +48,12 @@ function onInput(e) {
 }
 
 function createCountry(countries) {
-  const markup = countries
-    .map(
-      country =>
-        `<div class="country">
+  const markup = countries.map(
+    country =>
+      `<div class="country">
     <img class="flag-icon" src="${country.flags.svg}" alt="Flag of ${
-          country.name.official
-        }" >
+        country.name.official
+      }" >
     <h1>${country.name.official}</h1>
 </div>
 <div> 
@@ -66,8 +65,8 @@ function createCountry(countries) {
       country.languages
     )}</p>
 </div>`
-    )
-    .join('');
+  );
+  // .join(''); //При умовах завдання тут виводиться одна країна, тому join можна прибрати
 
   refs.div.insertAdjacentHTML('beforeend', markup);
 }
