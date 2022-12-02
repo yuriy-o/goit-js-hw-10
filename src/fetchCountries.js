@@ -1,6 +1,8 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 export function fetchCountries(name) {
   return fetch(
-    `https://restcountries.com/v2/all?fields=name,capital,population,flags,languages`
+    `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
   )
     .then(resp => {
       if (!resp.ok) {
@@ -13,5 +15,10 @@ export function fetchCountries(name) {
 
       return data;
     })
-    .catch(console.log);
+    .catch(error => {
+      console.log(error);
+
+      Notify.failure('Oops, there is no country with that name');
+      return error;
+    });
 }
