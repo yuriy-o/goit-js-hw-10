@@ -81,7 +81,7 @@ function createCountries(countries) {
     <p class="country-name">${country.name.official}</p>
 </div>`
     )
-    .join(' ');
+    .join('');
 
   refs.ul.insertAdjacentHTML('beforeend', markup);
 }
