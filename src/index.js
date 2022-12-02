@@ -78,7 +78,7 @@ function createCountries(countries) {
       country =>
         `<div class="country">
     <img class="flag-icon" src="${country.flags.svg}" alt="Flag of ${country.name.official}" >
-    <p>${country.name.official}</p>
+    <p class="text">${country.name.official}</p>
 </div>`
     )
     .join(' ');
