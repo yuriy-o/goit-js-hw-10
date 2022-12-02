@@ -10,6 +10,8 @@ export function fetchCountries(name) {
     })
     .then(data => {
       console.log(data);
+
+      return data;
     })
     .catch(console.log);
 }
