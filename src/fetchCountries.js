@@ -16,7 +16,7 @@ export function fetchCountries(name) {
       return data;
     })
     .catch(error => {
-      console.log(error);
+      console.log('Додаткова помилка в консоль', error);
 
       Notify.failure('Oops, there is no country with that name');
       return error;
