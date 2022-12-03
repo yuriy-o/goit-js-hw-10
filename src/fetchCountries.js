@@ -9,16 +9,16 @@ export function fetchCountries(name) {
         throw new Error(resp.status);
       }
 
-      console.log(resp);
+      console.log('then#1 → resp', resp);
       return resp.json();
     })
     .then(data => {
-      console.log(data);
+      console.log('then#2 → data', data);
 
       return data;
     })
     .catch(error => {
-      console.log('Додаткова помилка в консоль', error);
+      console.log('catch → Додаткова помилка в консоль', error);
 
       Notify.failure('Oops, there is no country with that name');
       return error;
