@@ -8,6 +8,8 @@ export function fetchCountries(name) {
       if (!resp.ok) {
         throw new Error(resp.status);
       }
+
+      console.log(resp);
       return resp.json();
     })
     .then(data => {
