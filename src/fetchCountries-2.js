@@ -7,10 +7,11 @@ export function fetchCountries(name) {
     .get(
       `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
     )
-    .then(data => {
-      console.log(data.data);
+    .then(response => {
+      console.log('response', response);
+      console.log('response.data', response.data);
 
-      return data.data;
+      return response.data;
     })
     .catch(error => {
       console.log('Додаткова помилка в консоль', error);
