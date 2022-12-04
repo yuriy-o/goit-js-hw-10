@@ -63,11 +63,9 @@ function createCountry(countries) {
     }</p>
     <p class="text"><span class="caption">Languages:</span> ${Object.values(
       country.languages
-    )}</p>
+    ).join(', ')}</p>
 </div>`
   );
-  // .join(''); //При умовах завдання тут виводиться одна країна, тому join можна прибрати
-
   refs.div.insertAdjacentHTML('beforeend', markup);
 }
 

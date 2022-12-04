@@ -66,7 +66,6 @@ function createCountry(countries) {
     ).join(', ')}</p>
 </div>`
   );
-  // .join(''); //При умовах завдання тут виводиться одна країна, тому join можна прибрати
 
   refs.div.insertAdjacentHTML('beforeend', markup);
 }
