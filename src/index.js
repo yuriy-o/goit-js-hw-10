@@ -25,26 +25,35 @@ function onInput(e) {
     return;
   }
 
-  fetchCountries(inputValue).then(country => {
-    // console.log('country.length', country.length); //Скільки країн введено в інпут
+  fetchCountries(inputValue)
+    .then(country => {
+      // console.log('country.length', country.length); //Скільки країн введено в інпут
 
-    clear();
+      clear();
 
-    if (country.length > 10) {
-      Notify.info('Too many matches found. Please enter a more specific name.');
-      return;
-    }
+      if (country.length > 10) {
+        Notify.info(
+          'Too many matches found. Please enter a more specific name.'
+        );
+        return;
+      }
 
-    if (country.length >= 2 && country.length <= 10) {
-      createCountries(country);
-      return;
-    }
+      if (country.length >= 2 && country.length <= 10) {
+        createCountries(country);
+        return;
+      }
 
-    if (country.length < 2) {
-      createCountry(country);
-      return;
-    }
-  });
+      if (country.length < 2) {
+        createCountry(country);
+        return;
+      }
+    })
+    .catch(error => {
+      console.log('catch → Додаткова помилка в консоль', error);
+
+      Notify.failure('Oops, there is no country with that name');
+      return error;
+    });
 }
 
 function createCountry(countries) {
